@@ -41,6 +41,12 @@ lightning_logs/
 *.hdr
 *.exr
 
+# Keep README example input images.
+!assets/
+!assets/examples/
+!assets/examples/*.jpg
+!assets/examples/*.png
+
 # TensorBoard and caches
 events.out.tfevents.*
 .threestudio_cache/

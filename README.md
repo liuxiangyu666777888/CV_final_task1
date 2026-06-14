@@ -15,6 +15,7 @@ Large datasets, model checkpoints, trained Gaussian point clouds, videos, and in
 │   ├── object_c/               # Single-image preprocessing, Magic123, mesh export/conversion
 │   ├── background/             # Mip-NeRF 360 background data and 2DGS training
 │   └── fusion/                 # Gaussian merging and video rendering
+├── assets/examples/            # Small example inputs shown in this README
 ├── utils/                      # Shared PLY, COLMAP, camera, and mesh-to-Gaussian utilities
 ├── 2d-gaussian-splatting/      # Vendored 2DGS code used by the project scripts
 ├── threestudio/                # Vendored threestudio code used for Object B
@@ -86,6 +87,34 @@ source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
+
+## Example Inputs
+
+The repository includes a small set of example inputs for documentation and quick inspection. These files are not the full training dataset.
+
+### Object A: Real Multi-View Input
+
+Object A is reconstructed from a phone-captured image sequence. Representative input views are shown below.
+
+| View 00000 | View 00060 | View 00120 |
+|---|---|---|
+| ![Object A view 00000](assets/examples/object_a_view_00000.jpg) | ![Object A view 00060](assets/examples/object_a_view_00060.jpg) | ![Object A view 00120](assets/examples/object_a_view_00120.jpg) |
+
+### Object B: Text Prompt
+
+Object B is generated from the following prompt:
+
+```text
+A wooden treasure chest with gold trim, photorealistic, 360 degree
+```
+
+### Object C: Single-Image Input
+
+Object C is generated from a single cherry image. The RGBA version is used as the Magic123 input after foreground extraction.
+
+| Original image | RGBA foreground |
+|---|---|
+| ![Object C original cherry image](assets/examples/object_c_input_cherry.jpg) | ![Object C RGBA foreground](assets/examples/object_c_input_cherry_rgba.png) |
 
 ## Data Preparation
 
