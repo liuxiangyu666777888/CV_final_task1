@@ -1,0 +1,35 @@
+# requirements.txt — HW3 Q1: 2DGS + AIGC Multi-Source Asset Pipeline
+# Core
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+imageio>=2.31.0
+imageio-ffmpeg>=0.4.9
+tqdm>=4.65.0
+PyYAML>=6.0
+easydict>=1.9
+
+# 3D / Mesh
+trimesh>=4.0.0
+open3d>=0.17.0
+plyfile>=1.0.0
+
+# Gaussian Splatting
+gsplat>=1.0.0
+
+# Image processing
+rembg>=2.0.50
+
+# Visualization
+matplotlib>=3.7.0
+
+# AIGC (Diffusion Models)
+diffusers>=0.25.0
+transformers>=4.36.0
+accelerate>=0.25.0
+
+# Utilities
+scipy>=1.10.0
+einops>=0.7.0

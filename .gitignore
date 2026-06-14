@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.o
+*.egg-info/
+build/
+dist/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+*.egg
+
+# Project data and outputs
+data/
+outputs/
+logs/
+runs/
+wandb/
+lightning_logs/
+
+# Model weights and large generated artifacts
+*.ckpt
+*.pth
+*.pt
+*.bin
+*.safetensors
+*.onnx
+*.ply
+*.obj
+*.mtl
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.npz
+*.npy
+*.hdr
+*.exr
+
+# TensorBoard and caches
+events.out.tfevents.*
+.threestudio_cache/
+**/.threestudio_cache/
+**/pretrained/
+**/checkpoints/
+**/ckpts/
+**/results/
+**/cache/
+**/.cache/
+
+# External/dataset folders inside vendored projects
+Magic123/data/
+Magic123/pretrained/
+threestudio/outputs/
+threestudio/load/tets/*.npz
+threestudio/load/lights/*.hdr
+threestudio/load/lights/*.bin
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

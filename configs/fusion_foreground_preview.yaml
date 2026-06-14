@@ -1,0 +1,34 @@
+# configs/fusion_foreground_preview.yaml — close-up preview for foreground objects
+objects:
+  object_a:
+    ply_path: "outputs/object_a_tight.ply"
+    translation: [0.6482, 1.1467, 0.9758]
+    scale: 0.16
+    rotation: [0.0, 20.0, 0.0]
+
+  object_b:
+    ply_path: "outputs/object_b.ply"
+    translation: [0.0729, 0.9943, 0.5336]
+    scale: 0.38
+    rotation: [0.0, -20.0, 0.0]
+
+  object_c:
+    ply_path: "outputs/object_c.ply"
+    translation: [1.1131, 1.1966, 2.1311]
+    scale: 0.60
+    rotation: [0.0, 35.0, 0.0]
+
+camera_path:
+  type: "spiral"
+  radius: 1.45
+  height_start: 0.05
+  height_end: 0.35
+  turns: 1
+  look_at: [0.65, 1.08, 1.45]
+
+output:
+  frames_dir: "outputs/frames_foreground_preview"
+  video_path: "outputs/roaming_foreground_preview.mp4"
+  resolution: [1280, 720]
+  fps: 30
+  frames: 90

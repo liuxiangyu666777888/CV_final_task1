@@ -1,0 +1,87 @@
+# configs/fusion.yaml — Fusion and rendering config
+objects:
+  object_a:
+    ply_path: "outputs/object_a_tight.ply"
+    translation: [-0.0053, 1.6598, 0.7815]
+    scale: 0.16
+    rotation: [0.0, 15.0, 0.0]            # euler angles in degrees (rx, ry, rz)
+    anchor_mode: "bottom_center"
+    ground_to_surface: true
+    support_radius: 0.45
+    support_band_half_width: 0.04
+    clearance: 0.16
+    filter:
+      scale_max: 0.12
+    background_cutout_radius: 0.22
+    background_cutout_below: 0.06
+    background_cutout_above: 0.40
+
+  object_b:
+    ply_path: "outputs/object_b.ply"
+    translation: [0.9753, 1.5227, 1.0186]
+    scale: 0.24
+    rotation: [0.0, -20.0, 0.0]
+    anchor_mode: "bottom_center"
+    ground_to_surface: true
+    support_radius: 0.45
+    support_band_half_width: 0.04
+    clearance: 0.16
+    background_cutout_radius: 0.28
+    background_cutout_below: 0.06
+    background_cutout_above: 0.45
+
+  object_c:
+    ply_path: "outputs/object_c.ply"
+    translation: [1.8333, 1.3997, 1.2317]
+    scale: 0.22
+    rotation: [0.0, 20.0, 0.0]
+    anchor_mode: "bottom_center"
+    ground_to_surface: true
+    support_radius: 0.45
+    support_band_half_width: 0.04
+    clearance: 0.16
+    background_cutout_radius: 0.18
+    background_cutout_below: 0.06
+    background_cutout_above: 0.35
+
+background:
+  ply_path: "outputs/background/point_cloud/iteration_30000/point_cloud.ply"
+  filter:
+    opacity_min: 0.05
+    scale_max: 0.20
+
+camera_path:
+  type: "circle"
+  auto_orient: true
+  radius: 2.25
+  height: -1.00                           # offset along inferred scene up; negative avoids the missing top border
+  angle_offset_deg: 170
+  sweep_deg: 100
+  look_at: [0.76, 0.99, 1.66]
+
+output:
+  frames_dir: "outputs/frames"
+  video_path: "outputs/roaming.mp4"
+  foreground_ply: "outputs/foreground_objects.ply"
+  resolution: [1920, 1080]
+  fps: 30
+  frames: 300
+  gsplat_coord_flip: "z"
+  border_repair:
+    enabled: false
+    top_max_frac: 0.28
+    dark_threshold: 28
+    min_area: 128
+    dilate_iters: 2
+    kernel_size: 5
+    inpaint_radius: 5
+  foreground_overlay:
+    enabled: true
+    mask_threshold: 8
+    dilate_iters: 1
+    kernel_size: 3
+    blur_sigma: 0.8
+    opacity: 1.0
+  crop:
+    top_frac: 0.18
+    bottom_frac: 0.04

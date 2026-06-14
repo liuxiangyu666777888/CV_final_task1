@@ -1,0 +1,13 @@
+# configs/object_c_preview.yaml — single-object Gaussian preview for Object C
+camera_path:
+  type: "circle"
+  radius: 0.72
+  height: 0.08
+  look_at: [-0.0025, -0.2115, 0.0546]
+
+output:
+  frames_dir: "outputs/object_c_preview_frames"
+  video_path: "outputs/object_c_preview.mp4"
+  resolution: [960, 960]
+  fps: 24
+  frames: 96

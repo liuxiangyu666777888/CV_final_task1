@@ -1,0 +1,26 @@
+# configs/object_c.yaml — Magic123 config for Object C (single-image-to-3D)
+input_image: "data/object_c/cherry_output_rgba.png"
+text_prompt: "A high-resolution DSLR image of a cherry"
+
+stage1:
+  method: "nerf"
+  iterations: 5000
+  resolution: [64, 64]
+  guidance:
+    type: "stable-diffusion"
+    model: "stabilityai/stable-diffusion-2-1-base"
+    guidance_scale: 100.0
+    reference_attention_weight: 0.8
+  lr: 0.001
+
+stage2:
+  method: "dmtet"
+  iterations: 3000
+  resolution: [512, 512]
+  tet_resolution: 128
+  lr: 0.0005
+  texture_lr: 0.001
+
+export:
+  mesh_path: "outputs/object_c/object_c.obj"
+  texture_path: "outputs/object_c/object_c_texture.png"
