@@ -15,12 +15,23 @@ env/
 *.egg
 
 # Project data and outputs
-data/
+data/*
 outputs/
 logs/
 runs/
 wandb/
 lightning_logs/
+
+# Minimal test inputs included in the repository.
+!data/object_a/
+data/object_a/*
+!data/object_a/images/
+data/object_a/images/*
+!data/object_a/images/*.jpg
+!data/object_c/
+data/object_c/*
+!data/object_c/cherry.jpg
+!data/object_c/cherry_output_rgba.png
 
 # Model weights and large generated artifacts
 *.ckpt

@@ -88,13 +88,19 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## Example Inputs
+## Included Test Inputs
 
-The repository includes a small set of example inputs for documentation and quick inspection. These files are not the full training dataset.
+The repository includes the lightweight input images needed to test the Object A and Object C stages directly after cloning. Large background data, COLMAP outputs, trained Gaussian splats, checkpoints, and rendered videos are still excluded.
 
 ### Object A: Real Multi-View Input
 
-Object A is reconstructed from a phone-captured image sequence. Representative input views are shown below.
+Object A is reconstructed from a phone-captured image sequence. The repository includes 123 input frames under:
+
+```text
+data/object_a/images/
+```
+
+Representative views are shown below.
 
 | View 00000 | View 00060 | View 00120 |
 |---|---|---|
@@ -110,7 +116,14 @@ A wooden treasure chest with gold trim, photorealistic, 360 degree
 
 ### Object C: Single-Image Input
 
-Object C is generated from a single cherry image. The RGBA version is used as the Magic123 input after foreground extraction.
+Object C is generated from a single cherry image. The repository includes both the original image and the RGBA foreground image:
+
+```text
+data/object_c/cherry.jpg
+data/object_c/cherry_output_rgba.png
+```
+
+The RGBA version is used as the Magic123 input after foreground extraction.
 
 | Original image | RGBA foreground |
 |---|---|
@@ -118,21 +131,21 @@ Object C is generated from a single cherry image. The RGBA version is used as th
 
 ## Data Preparation
 
-Create the data and output folders:
+Create the remaining data and output folders:
 
 ```bash
-mkdir -p data/object_a/images data/object_a/sparse data/object_c data/background outputs
+mkdir -p data/object_a/sparse data/background outputs
 ```
 
 ### Object A: Real Multi-View Capture
 
-Place extracted object images under:
+The repository already includes Object A input frames under:
 
 ```text
 data/object_a/images/
 ```
 
-If the input is a video, extract frames first:
+To replace them with a new capture, place extracted object images under the same directory. If the input is a video, extract frames first:
 
 ```bash
 python scripts/object_a/frame_extractor.py \
@@ -171,7 +184,7 @@ The first run downloads diffusion model weights through Hugging Face. Configure 
 
 ### Object C: Single Image
 
-Place the input image under `data/object_c/`, or pass an absolute path to the preprocessing command. The default config expects:
+The repository already includes the Object C input used by the project. The default config expects:
 
 ```text
 data/object_c/cherry_output_rgba.png
